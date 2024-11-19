@@ -1,106 +1,31 @@
-Aqui está um exemplo de uma narrativa com gráficos utilizando HTML e CSS. Vamos criar uma página que apresenta informações sobre a produção de biocombustível no Brasil.
-
-*index.html*
-```
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produção de Biocombustível no Brasil</title>
+    <title>Redes Sociais - Mundo</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
 </head>
 <body>
     <header>
-        <h1>Produção de Biocombustível no Brasil</h1>
+        <h1>Relatório das redes sociais</h1>
+        <nav>
+            <a href="index.html">Mundo</a>
+            <a href="minha-escola.html">Minha escola</a>
+        </nav>
     </header>
-    <main>
-        <section>
-            <h2>Evolução da Produção</h2>
-            <canvas id="grafico-producao"></canvas>
-        </section>
-        <section>
-            <h2>Principal Fonte de Matéria-Prima</h2>
-            <canvas id="grafico-materia-prima"></canvas>
-        </section>
-        <section>
-            <h2>Regiões Produtoras</h2>
-            <canvas id="grafico-regioes"></canvas>
+    <main class="graficos-section">
+        <section id="graficos-container" class="graficos-container">
+            <!-- crie os gráficos/texto aqui -->
         </section>
     </main>
-    <script src="(link unavailable)"></script>
-    <script>
-        // Gráfico de produção
-        const ctxProducao = document.getElementById('grafico-producao').getContext('2d');
-        const chartProducao = new Chart(ctxProducao, {
-            type: 'line',
-            data: {
-                labels: ['2010', '2015', '2020'],
-                datasets: [{
-                    label: 'Produção (milhões de litros)',
-                    data: [10, 20, 30],
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        // Gráfico de matéria-prima
-        const ctxMateriaPrima = document.getElementById('grafico-materia-prima').getContext('2d');
-        const chartMateriaPrima = new Chart(ctxMateriaPrima, {
-            type: 'pie',
-            data: {
-                labels: ['Canha-de-açúcar', 'Soja', 'Outros'],
-                datasets: [{
-                    label: 'Matéria-Prima',
-                    data: [60, 30, 10],
-                    backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)'],
-                    borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        // Gráfico de regiões
-        const ctxRegioes = document.getElementById('grafico-regioes').getContext('2d');
-        const chartRegioes = new Chart(ctxRegioes, {
-            type: 'bar',
-            data: {
-                labels: ['Sudeste', 'Centro-Oeste', 'Nordeste'],
-                datasets: [{
-                    label: 'Regiões Produtoras',
-                    data: [40, 30, 30],
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
+    <footer>
+        <p>Desenvolvido por Gui Lima</p>
+    </footer>
+    <script type="module" src="graficos/common.js"></script>
+    <script type="module" src="graficos/informacoesGlobais.js"></script>
+    <script type="module" src="graficos/quantidadeUsuarios.js"></script>
+    <script type="module" src="graficos/redesFavoritasMundo.js"></script>
 </body>
 </html>
-```
-
-
